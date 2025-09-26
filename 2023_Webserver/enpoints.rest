@@ -1,0 +1,9 @@
+GET http://localhost:5170
+###
+GET http://localhost:5170/student.txt
+###
+GET http://localhost:5170/student
+###
+GET http://localhost:5170/index.html
+###
+GET http://localhost:5170/style.css
