@@ -28,7 +28,7 @@ Beispiel:
 10 ist durch 2 teilbar, daher keine Primzahl
 ```
 
-### Aufgabe 2 
+### Aufgabe 2
 
 Erstelle ein Projekt, das das erste Kommandozeilenargument als `Decimal`
 Datentyp parst und ermittelt, ob diese Zahl eine Primzahl ist. Wenn nicht,
@@ -40,7 +40,6 @@ Beispiel:
 > dotnet run 74
 74 ist kein Primzahl, die nächste ist 79
 ```
-
 
 ### Aufgabe 3 Primzahlzwilling ab
 
@@ -56,23 +55,3 @@ Beispiel:
 >dotnet run 1000
 Der nächste Primzahlzwilling ab 1000 sind 1049 und 1051.
 ```
-
-### Aufgabe 4 Mastermind
-
-Gegeben ist ein halbfertiges Projekt "mastermind.zip", in welchem die
-Bewertung eines Versuches errechnet werden soll (wieviel schwarze, wieviele
-weiße Stecker).
-
-Implementiere, die Klasse "Bewertung" fertig.
-
----
-
-Gutes Gelingen!
-
-
-
-
-
-
-
-
