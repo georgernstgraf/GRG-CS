@@ -87,3 +87,4 @@ node_modules/
 # Local development settings
 # appsettings.Development.json
 # appsettings.Local.json
+2025_Backend_SQLite_Partials/opentdb-app.sqlite

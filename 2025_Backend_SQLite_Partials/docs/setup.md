@@ -28,6 +28,6 @@ dotnet tool install dotnet-ef
 > **Note:** Run the following commands from the project directory that contains your `DbContext` class.
 
 ```bash
-dotnet ef migrations add InitialCreate
-dotnet ef database update
+dotnet ef migrations add InitialCreate  # erzeugt die erste migration im code
+dotnet ef database update  # erhzeugt die _migrations table
 ```
