@@ -22,3 +22,12 @@ dotnet new tool-manifest
 dotnet tool install dotnet-ef
 # dotnet tool run dotnet-ef now possible
 ```
+
+## Create an initial migration:
+
+> **Note:** Run the following commands from the project directory that contains your `DbContext` class.
+
+```bash
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+```
