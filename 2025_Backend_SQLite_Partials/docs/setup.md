@@ -31,3 +31,9 @@ dotnet tool install dotnet-ef
 dotnet ef migrations add InitialCreate  # erzeugt die erste migration im code
 dotnet ef database update  # erhzeugt die _migrations table
 ```
+
+## da hab ich mich verlaufen dann, ich wollte scaffolden!
+
+```bash
+dotnet ef dbcontext scaffold "Data Source=opentdb-app.sqlite" Microsoft.EntityFrameworkCore.Sqlite --output-dir Models --context-dir Models --context AppDbContext --force
+```

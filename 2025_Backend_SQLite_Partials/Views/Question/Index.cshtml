@@ -1,0 +1,53 @@
+@model quiz.Models.ViewModels.QuestionIndexViewModel
+@using System.Net
+
+@{
+    ViewData["Title"] = "Questions";
+    var startIndex = (Model.Page - 1) * Model.PageSize + 1;
+    var endIndex = System.Math.Min(Model.Page * Model.PageSize, Model.TotalCount);
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h1 class="display-6 mb-0">OpenTDB Questions</h1>
+        <p class="text-muted mb-0">Showing @startIndex to @endIndex of @Model.TotalCount questions</p>
+    </div>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary">Back to dashboard</a>
+</div>
+
+@if (!Model.Items.Any())
+{
+    <div class="alert alert-info">No questions found. Try adjusting the page parameters.</div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-striped align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Question</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Difficulty</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var question in Model.Items)
+                {
+                    <tr>
+                        <th scope="row">@question.Id</th>
+                        <td>@Html.Raw(WebUtility.HtmlDecode(question.Question1))</td>
+                        <td><span class="badge bg-primary">@question.Category.Name</span></td>
+                        <td><span class="badge bg-secondary text-uppercase">@question.Difficulty.Level</span></td>
+                        <td>@question.Type.Type1</td>
+                        <td class="fw-semibold">@Html.Raw(WebUtility.HtmlDecode(question.CorrectAnswer.Answer1))</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <partial name="_Pagination" model="Model" />
+}

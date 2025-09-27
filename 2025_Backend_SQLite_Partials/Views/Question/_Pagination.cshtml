@@ -1,0 +1,31 @@
+@model quiz.Models.ViewModels.QuestionIndexViewModel
+
+@if (Model.TotalPages > 1)
+{
+    var prevDisabled = Model.Page == 1 ? " disabled" : string.Empty;
+    var nextDisabled = Model.Page == Model.TotalPages ? " disabled" : string.Empty;
+
+    <nav aria-label="Question pagination" class="mt-4">
+        <ul class="pagination">
+            <li class="page-item@(prevDisabled)">
+                <a class="page-link" asp-route-page="@(Model.Page - 1)" asp-route-pageSize="@Model.PageSize">
+                    Previous
+                </a>
+            </li>
+
+            @for (var pageNumber = 1; pageNumber <= Model.TotalPages; pageNumber++)
+            {
+                var active = pageNumber == Model.Page ? " active" : string.Empty;
+                <li class="page-item@(active)">
+                    <a class="page-link" asp-route-page="@pageNumber" asp-route-pageSize="@Model.PageSize">@pageNumber</a>
+                </li>
+            }
+
+            <li class="page-item@(nextDisabled)">
+                <a class="page-link" asp-route-page="@(Model.Page + 1)" asp-route-pageSize="@Model.PageSize">
+                    Next
+                </a>
+            </li>
+        </ul>
+    </nav>
+}
