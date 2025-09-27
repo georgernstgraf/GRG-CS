@@ -20,4 +20,5 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 ```bash
 dotnet new tool-manifest
 dotnet tool install dotnet-ef
+# dotnet tool run dotnet-ef now possible
 ```
