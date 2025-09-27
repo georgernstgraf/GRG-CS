@@ -85,5 +85,5 @@ StyleCopReport.xml
 node_modules/
 
 # Local development settings
-appsettings.Development.json
-appsettings.Local.json
+# appsettings.Development.json
+# appsettings.Local.json
