@@ -21,10 +21,10 @@ internal class Bruch
         _ganz = ganz;
         _zaehler = zaehler;
         _nenner = nenner;
-        Kuerze();
+        Kürze();
     }
 
-    private void Kuerze()
+    private void Kürze()
     {
         var g = Gcd(_zaehler, _nenner);
         _zaehler /= g;
@@ -41,7 +41,6 @@ internal class Bruch
             b = a % b;
             a = temp;
         }
-
         return a;
     }
 
