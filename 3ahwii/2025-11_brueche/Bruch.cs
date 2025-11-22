@@ -9,9 +9,9 @@ internal class Bruch
 
         public Bruch(string bruchtext)
         {
-            String[] teile1 = bruchtext.Split(' ');
+            var teile1 = bruchtext.Split(' ');
             this._ganz = int.Parse(teile1[0]);
-            String[] teile = teile1[1].Split('/');
+            var teile = teile1[1].Split('/');
             this._zaehler = int.Parse(teile[0]);
             this._nenner = int.Parse(teile[1]);
         }
