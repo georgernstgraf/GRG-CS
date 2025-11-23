@@ -1,6 +1,6 @@
-namespace _2025_11_brueche;
+namespace BruchName;
 
-internal class Bruch
+public class Bruch
 {
     // jetzt kommen die sog. "Attribute" der Klasse oder "Felder"
     private int _ganz;
@@ -14,6 +14,7 @@ internal class Bruch
         var teile = teile1[1].Split('/');
         _zaehler = int.Parse(teile[0]);
         _nenner = int.Parse(teile[1]);
+        this.Kürze();
     }
 
     private Bruch(int ganz, int zaehler, int nenner)

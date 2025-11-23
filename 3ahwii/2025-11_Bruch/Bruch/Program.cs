@@ -1,4 +1,4 @@
-﻿namespace _2025_11_brueche;
+﻿namespace BruchName;
 
 internal static class Program
 {
