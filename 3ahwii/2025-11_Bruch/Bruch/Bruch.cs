@@ -1,6 +1,6 @@
 namespace BruchName;
 
-public class Bruch
+public class _Bruch
 {
     // jetzt kommen die sog. "Attribute" der Klasse oder "Felder"
     private int _ganz;
