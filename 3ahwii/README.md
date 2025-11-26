@@ -1,5 +1,29 @@
 # 3AHWII SWP OOP (C#)
 
+## 2025-11-26
+
+Installation Rider
+
+HÜ: im Kommentar der Bruch Klasse
+
+C-Sharp Repo: <https://github.com/georgernstgraf/GRG-CS.git>
+(und es geht auch dort weiter)
+
+## 2025-11-12
+
+HÜ: Debugger Config nachweislich (Screenshot) erstellen.
+
+- Commandline args verarbeiten, exception bzw. Hilfe anbieten
+- Brüche gekürzt ausgeben mit Hilfe der toString methode
+- Testmethoden implementieren
+
+Was wird getestet?
+
+- gültige Ergebnisse werden asserted z.B. "1 1/2", "2 1/2", 4
+- davon mehrere sind ideal
+- es soll auch geprüft werden, ob exception kommt bei ungültigem Wert für den Construktor
+- idealerweise ein paar richtige und ein paar unrichtige args
+
 ## 2025-11-05
 
 - wh: class / instance / constructor / attributes

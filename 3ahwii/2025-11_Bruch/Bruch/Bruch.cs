@@ -8,6 +8,10 @@ public class Bruch
     private int _zaehler;
 
     public Bruch(string bruchtext)
+    // Anforderungen
+    // 1. "3" oder auch "7/8" sollen möglich sein, zusätzlich zu "2 5/18"
+    // bei jedem anderen String soll eine Exception geworfen werden
+    // Alle diese Fälle in der Testklasse abbilden!!
     {
         var teile1 = bruchtext.Split(' ');
         _ganz = int.Parse(teile1[0]);
