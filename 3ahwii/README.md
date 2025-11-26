@@ -6,7 +6,8 @@ Installation Rider
 
 HÜ: im Kommentar der Bruch Klasse
 
-C-Sharp Repo: <https://github.com/georgernstgraf/GRG-CS.git>
+C-Sharp Repo: dieses hier ;)
+
 (und es geht auch dort weiter)
 
 ## 2025-11-12
