@@ -57,6 +57,7 @@ public class _Bruch
 
     public override string ToString()
     {
+        if (_zaehler == 0) return $"{_ganz}";
         return $"{_ganz} {_zaehler}/{_nenner}";
         // JS: return `ich bin ein bruch: ${this.zaehler}/${this.nenner}`;
     }

@@ -28,4 +28,15 @@ public class BruchTests
         var sum = a.Addiere(c);
         Assert.Equal("3 5/6", sum.ToString());
     }
+
+    [Theory]
+    [InlineData("3 7/11", "3 7/11")]           // already normalized
+    [InlineData("0 15/10", "1 1/2")]           // normalize and reduce
+    [InlineData("2 3/4", "2 3/4")]             // unchanged
+    [InlineData("1 2/2", "2")]             // becomes whole number with 0/1 remainder
+    public void ToString_Normalizes_And_Formats_For_Multiple_Inputs(string input, string expected)
+    {
+        var b = new Bruch(input);
+        Assert.Equal(expected, b.ToString());
+    }
 }

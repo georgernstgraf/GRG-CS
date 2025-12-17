@@ -12,7 +12,7 @@
 
 ### Hinzufügen des Projektes zum Solution File:
 
-- dotnet sln add Bruch/Bruch.csproj 
+- dotnet sln add Bruch/Bruch.csproj
 
 ### Anlegen des Test Projektes:
 
@@ -20,11 +20,11 @@
 
 ### Und wieder zur Solution dazutun:
 
-- dotnet sln add BruchTest/BruchTest.csproj 
+- dotnet sln add BruchTest/BruchTest.csproj
 
 ### Zum Schluss eine Referenz in das Testprojekt geben
 
-- dotnet add BruchTest/BruchTest.csproj reference Bruch/Bruch.csproj 
+- dotnet add BruchTest/BruchTest.csproj reference Bruch/Bruch.csproj
 
 ## Ausführen der Tests:
 
