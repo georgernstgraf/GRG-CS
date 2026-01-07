@@ -1,5 +1,12 @@
 # 3AHWII SWP OOP (C#)
 
+## 2026-01-07
+
+CSV, siehe in Folien
+HÜ: persons.csv einlesen mit CsvHelper, Ausgabe in Konsole
+
+- für sehr gut: Speichern in ein Array.
+
 ## 2025-11-26
 
 Installation Rider
@@ -35,7 +42,7 @@ HÜ: Neuauflage Brüche
 
 - toString() soll bitte immer ganzzahl und den Bruch gekürzt liefern, wie zB "3 7/11", aber auch "3/4"
 - alle exceptions bitte fangen und dem User sinnvolle Rückmeldung geben.
-  
+
 ## Notes für GRG
 
 - OO ist noch einiger Bedarf
