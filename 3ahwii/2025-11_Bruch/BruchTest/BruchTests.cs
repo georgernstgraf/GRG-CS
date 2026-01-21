@@ -34,10 +34,20 @@ public class BruchTests
     [InlineData("0 15/10", "1 1/2")]           // normalize and reduce
     [InlineData("2 3/4", "2 3/4")]             // unchanged
     [InlineData("1 2/2", "2")]             // becomes whole number with 0/1 remainder
+    [InlineData("3", "3")]                     // whole number only
+    [InlineData("7/8", "0 7/8")]               // fraction only
     public void ToString_Normalizes_And_Formats_For_Multiple_Inputs(string input, string expected)
     {
         var b = new Bruch(input);
         Assert.Equal(expected, b.ToString());
+    }
+
+    [Fact]
+    public void Constructor_Throws_Exception_On_Invalid_Format()
+    {
+        Assert.Throws<ArgumentException>(() => new Bruch("invalid"));
+        Assert.Throws<ArgumentException>(() => new Bruch("1 2/3/4"));
+        Assert.Throws<ArgumentException>(() => new Bruch("1/"));
     }
 
     [Fact]

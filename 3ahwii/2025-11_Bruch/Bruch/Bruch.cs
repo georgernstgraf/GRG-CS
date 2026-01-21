@@ -13,11 +13,42 @@ public class Bruch
     // bei jedem anderen String soll eine Exception geworfen werden
     // Alle diese Fälle in der Testklasse abbilden!!
     {
-        var teile1 = bruchtext.Split(' ');
-        _ganz = int.Parse(teile1[0]);
-        var teile = teile1[1].Split('/');
-        _zaehler = int.Parse(teile[0]);
-        _nenner = int.Parse(teile[1]);
+        if (string.IsNullOrWhiteSpace(bruchtext))
+        {
+            throw new ArgumentException("Die Eingabe darf nicht leer sein.");
+        }
+
+        var teileLeerzeichen = bruchtext.Trim().Split(' ');
+
+        if (teileLeerzeichen.Length == 2)
+        {
+            if (!int.TryParse(teileLeerzeichen[0], out _ganz))
+            {
+                throw new ArgumentException("Der ganzzahlige Teil ist ungültig.");
+            }
+            ParseBruch(teileLeerzeichen[1]);
+        }
+        else if (teileLeerzeichen.Length == 1)
+        {
+            if (teileLeerzeichen[0].Contains('/'))
+            {
+                _ganz = 0;
+                ParseBruch(teileLeerzeichen[0]);
+            }
+            else
+            {
+                if (!int.TryParse(teileLeerzeichen[0], out _ganz))
+                {
+                    throw new ArgumentException("Die Zahl ist ungültig.");
+                }
+                _zaehler = 0;
+                _nenner = 1;
+            }
+        }
+        else
+        {
+            throw new ArgumentException("Das Format ist ungültig. Erwartet: 'Ganzzahl Zähler/Nenner', 'Zähler/Nenner' oder 'Ganzzahl'.");
+        }
 
         if (_nenner == 0)
         {
@@ -25,6 +56,17 @@ public class Bruch
         }
 
         this.Kürze();
+    }
+
+    private void ParseBruch(string bruchString)
+    {
+        var teileSchraegstrich = bruchString.Split('/');
+        if (teileSchraegstrich.Length != 2 || 
+            !int.TryParse(teileSchraegstrich[0], out _zaehler) || 
+            !int.TryParse(teileSchraegstrich[1], out _nenner))
+        {
+            throw new ArgumentException("Der Bruch-Teil ist ungültig.");
+        }
     }
 
     private Bruch(int ganz, int zaehler, int nenner)
