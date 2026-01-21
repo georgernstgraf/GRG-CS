@@ -119,6 +119,11 @@ This repository contains .NET 8.0 projects for educational purposes (German scho
 - Namespace at file level (implicit)
 - Entry point in `Main` via top-level statements
 
+## Git & Commits
+
+- Jede Commit-Message MUSS die korrespondierende Ticket-Nummer (z.B. ` #2 `) enthalten.
+- Die Ticket-Nummer muss von Leerzeichen umgeben sein (außer am Anfang oder Ende der Nachricht).
+
 ## Existing Cursor/Copilot Rules
 
 - No `.cursor/rules/` or `.cursorrules` found
