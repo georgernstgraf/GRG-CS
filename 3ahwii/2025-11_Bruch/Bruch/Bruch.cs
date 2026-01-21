@@ -18,11 +18,22 @@ public class Bruch
         var teile = teile1[1].Split('/');
         _zaehler = int.Parse(teile[0]);
         _nenner = int.Parse(teile[1]);
+
+        if (_nenner == 0)
+        {
+            throw new ArgumentException("Der Nenner darf nicht Null sein.");
+        }
+
         this.Kürze();
     }
 
     private Bruch(int ganz, int zaehler, int nenner)
     {
+        if (nenner == 0)
+        {
+            throw new ArgumentException("Der Nenner darf nicht Null sein.");
+        }
+
         _ganz = ganz;
         _zaehler = zaehler;
         _nenner = nenner;

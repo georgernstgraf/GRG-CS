@@ -39,4 +39,11 @@ public class BruchTests
         var b = new Bruch(input);
         Assert.Equal(expected, b.ToString());
     }
+
+    [Fact]
+    public void Constructor_Throws_Exception_On_Zero_Denominator()
+    {
+        var ex = Assert.Throws<ArgumentException>(() => new Bruch("1 1/0"));
+        Assert.Equal("Der Nenner darf nicht Null sein.", ex.Message);
+    }
 }
