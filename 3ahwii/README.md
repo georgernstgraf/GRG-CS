@@ -1,8 +1,8 @@
 # 3AHWII SWP OOP (C#)
 
-## 2026-02-24
+## 2026-02-24, 2026-02-17, 2026-02-10
 
-Intensive Beschäftigung mit Opencode.ai
+Intensive Beschäftigung mit Opencode.ai und agentic coding
 
 - commands
 - skills
