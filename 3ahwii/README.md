@@ -1,5 +1,14 @@
 # 3AHWII SWP OOP (C#)
 
+## 2026-02-24
+
+Intensive Beschäftigung mit Opencode.ai
+
+- commands
+- skills
+- inference providers (github, opencode zen, openrouter)
+- opensource vs closed source models
+
 ## 2026-01-07
 
 CSV, siehe in Folien
