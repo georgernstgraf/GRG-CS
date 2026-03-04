@@ -1,5 +1,19 @@
 # 3AHWII SWP OOP (C#)
 
+todo enum
+cont bei 5.6 signaturen
+
+## 2026-02-04
+
+- knowhow check (ben, moritz nicht werten)
+- georgernstgraf/opencode-helpers repository für Agent zeugs
+- ENUM
+- skriptum 2.2. naming conventions
+- 2.3.
+- 2.4. fail fast vs. happy path
+- 4.5. wichtige assertions
+- kap 5 bis vor signaturen gemacht.
+
 ## 2026-02-24, 2026-02-17, 2026-02-10
 
 Intensive Beschäftigung mit Opencode.ai und agentic coding
