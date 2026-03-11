@@ -7,6 +7,38 @@ cont bei 5.6 signaturen
 
 ## 2026-03-11
 
+- fail fast vs. happy path, vorteile und aktuell standard: fail fast
+- "ein Statement" (im context von if/else) vs "ein Block", der mit `{ ... }` eingeschlossen ist.
+- $"BMI: {bmi:F2} - {bmiTyp}" ist ein sog. "template string", sehr nützlich und mächtig.
+- Interfaces (Kap. 13) besprochen
+
+### Hausübung: Schnittstellen für ein Inventarsystem
+
+**Aufgabenstellung:**
+Entwickle ein kleines Konsolenprogramm für ein Inventarsystem. Es gibt verschiedene Gegenstände, die alle einen Namen haben und Informationen ausgeben können.
+
+1. Erstelle ein Interface `IInventarGegenstand` mit folgenden Elementen:
+    - Property `string Name { get; }`
+    - Methode `string BeschreibeDich();`
+
+2. Erstelle zwei Klassen:
+    - `Waffe`: Hat zusätzlich ein `int Schaden`.
+    - `Heiltrank`: Hat zusätzlich ein `int Heilwert`.
+
+3. Implementiere das Interface in beiden Klassen. Die Methode `BeschreibeDich()` soll einen aussagekräftigen String zurückgeben (z.B.: *"Ich bin das Schwert und mache 15 Schaden."*).
+
+4. **Main-Methode:**
+    - Erstelle eine `List<IInventarGegenstand>`.
+    - Füge eine `Waffe` und einen `Heiltrank` hinzu.
+    - Iteriere mit einer `foreach`-Schleife durch die Liste und rufe für jeden Gegenstand `BeschreibeDich()` auf.
+
+**Lernziel:**
+Verstehen, dass man Objekte unterschiedlicher Klassen in einer gemeinsamen Liste speichern kann, solange sie das gleiche Interface implementieren.
+
+***
+
+Das ist überschaubar, ohne viel "Boilerplate"-Code, und zeigt den Nutzen der Abstraktion direkt in der Praxis. Passt das für dein Niveau?
+
 ## 2026-03-04
 
 - knowhow check (ben, moritz nicht werten)
