@@ -1,9 +1,13 @@
 # 3AHWII SWP OOP (C#)
 
+## PLF am 27. Mai
+
 todo enum
 cont bei 5.6 signaturen
 
-## 2026-02-04
+## 2026-03-11
+
+## 2026-03-04
 
 - knowhow check (ben, moritz nicht werten)
 - georgernstgraf/opencode-helpers repository für Agent zeugs
