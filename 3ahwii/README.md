@@ -6,6 +6,8 @@ todo enum
 
 ## 2026-03-18_Kap_6
 
+### Hausübung: ref/out, Strings und Schleifen mit break/continue
+
 - cont bei 5.6 signaturen
 - Referenz- und Wertetypen
 - ref vs out
