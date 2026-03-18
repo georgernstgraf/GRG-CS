@@ -3,7 +3,15 @@
 ## PLF am 27. Mai
 
 todo enum
-cont bei 5.6 signaturen
+
+## 2026-03-18_Kap_6
+
+- cont bei 5.6 signaturen
+- Referenz- und Wertetypen
+- ref vs out
+- kap 7 beziehungen v. Objekten
+- kap 8 strings / .Equals / == / stringbuilder
+- kap 9 schleifen + extra break / continue
 
 ## 2026-03-11
 

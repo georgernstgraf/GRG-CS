@@ -4,6 +4,54 @@
 
 ---
 
+## Hausübung vom 18. März 2026
+
+### Thema: ref/out, Strings und Schleifen mit break/continue
+
+**Aufgabenstellung:**
+
+Erstelle eine Klasse `Einkaufsliste` mit folgenden Anforderungen:
+
+1. **Felder und Properties:**
+   - Ein Array für maximal 10 Artikel (Strings)
+   - Ein Zähler für die aktuelle Anzahl der Artikel
+   - Read-only Property `Anzahl` für den Zähler
+
+2. **Methode mit `out`:**
+   ```csharp
+   public bool VersucheHinzufuegen(string artikel, out string meldung)
+   ```
+   - Fügt einen Artikel hinzu, wenn noch Platz ist
+   - Gibt bei Erfolg `true` zurück und eine Bestätigungsmeldung
+   - Gibt bei vollem Array `false` zurück und eine Fehlermeldung
+
+3. **Methode mit `break`:**
+   ```csharp
+   public bool Enthaelt(string gesuchterArtikel)
+   ```
+   - Sucht nach einem Artikel im Array
+   - Verwendet `break` um die Suche bei Fund abzubrechen
+
+4. **Methode mit `continue`:**
+   ```csharp
+   public void GibKurzeNamenAus(int minLaenge)
+   ```
+   - Gibt alle Artikel aus, die kürzer als `minLaenge` Zeichen sind
+   - Verwendet `continue` um längere Namen zu überspringen
+
+5. **String-Vergleich (Bonus für sehr gut):**
+   - Schreibe eine Methode, die zwei Strings sowohl mit `==` als auch mit `.Equals()` vergleicht
+   - Teste mit: `string a = "Milch"; string b = "Mil" + "ch";`
+   - Gib aus, ob beide Vergleiche das gleiche Ergebnis liefern
+
+**Lernziele:**
+- `out`-Parameter für Rückgabewerte verstehen
+- `break` zum vorzeitigen Beenden von Schleifen einsetzen
+- `continue` zum Überspringen von Iterationen verwenden
+- Unterschied zwischen `==` und `.Equals()` bei Strings kennenlernen
+
+---
+
 ## Hausübung vom 11. März 2026
 
 ### Thema: Interfaces (Kapitel 13)
