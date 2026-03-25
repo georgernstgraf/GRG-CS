@@ -4,6 +4,12 @@
 
 todo enum
 
+## 2026-03-25
+
+Skriptum Kap. 10:
+
+- arrays, List, Dictionary, HashSet
+
 ## 2026-03-18_Kap_6
 
 ### Hausübung: ref/out, Strings und Schleifen mit break/continue
