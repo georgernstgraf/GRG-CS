@@ -7,6 +7,16 @@
 - null?
 - enum
 
+## 2026-04-15
+
+HÜ bis nächste Woche:
+
+- die free tiers aus dem `*inference` ordner in Dein opencode konfigurieren
+- Das Projekt 2025_Blazor in Dein Repo kopieren und zum Laufen bringen
+- https://github.com/public-apis/public-apis ansehen 3 Lieblinge aussuchen
+- Verbesserungs / Änderungsvorschläge machen
+- Formuliere Deine Traum-App die bis Ende Semester entstehen kann / soll.
+
 ## 2026-04-08
 
 **Recherche Inference:**
