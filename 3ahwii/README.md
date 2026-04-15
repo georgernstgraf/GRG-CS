@@ -12,6 +12,7 @@
 HÜ bis nächste Woche:
 
 - die free tiers aus dem `*inference` ordner in Dein opencode konfigurieren
+- Probleme und besonders was GUT geht: dokumentieren!
 - Das Projekt 2025_Blazor in Dein Repo kopieren und zum Laufen bringen
 - https://github.com/public-apis/public-apis ansehen 3 Lieblinge aussuchen
 - Verbesserungs / Änderungsvorschläge machen
