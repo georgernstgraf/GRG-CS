@@ -2,7 +2,22 @@
 
 ## PLF am 27. Mai
 
-todo enum
+## Coming soon:
+
+- null?
+- enum
+
+## 2026-04-08
+
+**Recherche Inference:**
+
+- Was ist Inference? -> Inference ist die Fähigkeit eines Modells, auf Basis von gelernten Mustern und Informationen neue Schlussfolgerungen zu ziehen oder Vorhersagen zu treffen. Es ermöglicht einem Modell, auf unbekannte Daten zu reagieren und relevante Informationen zu generieren, auch wenn es diese spezifischen Daten nicht zuvor gesehen hat.
+
+**Rest siehe Tagesordner**
+
+HÜ: Alle identifizierten Inference-Provider ins opencode konfigurieren!
+
+- `opencode auth list` > 2026-04-08_Inference/hü.txt
 
 ## 2026-03-25
 
