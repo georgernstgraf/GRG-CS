@@ -2,6 +2,21 @@
 
 Was ist Inference? -> Inference ist die Fähigkeit eines Modells, auf Basis von gelernten Mustern und Informationen neue Schlussfolgerungen zu ziehen oder Vorhersagen zu treffen. Es ermöglicht einem Modell, auf unbekannte Daten zu reagieren und relevante Informationen zu generieren, auch wenn es diese spezifischen Daten nicht zuvor gesehen hat.
 
+## Opencode Config
+
+- npm i -g opencode-ai
+- opencode auth login  # provider-connect
+- `/model` in der TUI bzw. `opencode models`  # liste was verfügbar ist
+- `ctrl-d` ... exit app (EOF)
+
+## Providers
+
+- groq (eigenes Silikon)
+- aistudio google gemini
+- openrouter (PAYG, aber freie Modelle)
+- opencode (big pickle)
+- nvidia
+
 **Recherche Inference:**
 
 ## komplett "gratis"
