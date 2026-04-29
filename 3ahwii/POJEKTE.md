@@ -1,5 +1,7 @@
 # Blaozor / Razor Projekte
 
+Anregungen von github public-apis holen!
+
 ## Themen:
 
 - Salima: Anime
@@ -13,4 +15,4 @@
 - Nicolas: Fußball
 - Marco: UFC API
 - Nico: Clubbings
-- Georgi:
+- Georgi: Travel Planner
