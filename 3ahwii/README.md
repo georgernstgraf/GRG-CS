@@ -7,6 +7,19 @@
 - null?
 - enum
 
+## 2026-04-29
+
+- App Designs besprochen
+- georgernstgraf/aitranscribe vorgestellt
+- georgernstgraf/aitranscribe-windows erwähnt
+
+Aufgabe:
+
+Überlege Dir konkret - im Voraus! - Welche Funktionen Deine Applikation haben soll,
+und WIE sie WELCHES Api verwendet, um den Funktionsumfang zu erreichen.
+
+Ist es wünschenswert, Daten zu persistieren, damit Nutzer sie bei Neustart wieder finden?
+
 ## 2026-04-15
 
 HÜ bis nächste Woche:

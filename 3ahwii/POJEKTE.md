@@ -1,0 +1,16 @@
+# Blaozor / Razor Projekte
+
+## Themen:
+
+- Salima: Anime
+- Dejan: Gaming
+- Ben: Riot API
+- Mateo: Wetter
+- Marcel: Brauerei / Getränke / Cocktails
+- Lukas: Feiertage (Tag des Pferdes / pro Land)
+- Daniel: Finanz-Tracker
+- Moritz: Strava!
+- Nicolas: Fußball
+- Marco: UFC API
+- Nico: Clubbings
+- Georgi:
