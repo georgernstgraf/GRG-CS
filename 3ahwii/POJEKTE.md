@@ -13,6 +13,6 @@ Anregungen von github public-apis holen!
 - Daniel: MBA
 - Moritz: Strava!
 - Nicolas: Fußball
-- Marco: UFC API
+- Marko: Fitness API
 - Nico: Clubbings
 - Georgi: Travel Planner
