@@ -10,7 +10,7 @@ Anregungen von github public-apis holen!
 - Mateo: Wetter
 - Marcel: Brauerei / Getränke / Cocktails
 - Lukas: Feiertage (Tag des Pferdes / pro Land)
-- Daniel: Finanz-Tracker
+- Daniel: MBA
 - Moritz: Strava!
 - Nicolas: Fußball
 - Marco: UFC API

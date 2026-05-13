@@ -2,6 +2,11 @@
 
 ## PLF am 27. Mai
 
+## 2026-05-13
+
+HÜ: ein simples Projekt (console) mit EFCore und 2 Tabellen, Crud Operationen.
+Nimm die Domain von Deinem geplanten Projekt.
+
 ## Coming soon:
 
 - null?
