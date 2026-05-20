@@ -1,0 +1,18 @@
+get https://opentdb.com/api.php?amount=3&category=20&difficulty=easy
+
+###
+POST https://www.strava.com/api/v3/activities
+Content-Type: application/json
+Authorization: Bearer {access_token}
+
+{
+"name": "value",
+"type": "value",
+"sport_type": "value",
+"start_date_local": "value",
+"elapsed_time": "value",
+"description": "value",
+"distance": "value",
+"trainer": "value",
+"commute": "value"
+}

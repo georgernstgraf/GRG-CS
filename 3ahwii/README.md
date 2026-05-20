@@ -2,6 +2,11 @@
 
 ## PLF am 27. Mai
 
+## 2026-05-20
+
+- rest client / http proto
+- teststoff: ki sachen generell / rest / efcore / interfaces
+  
 ## 2026-05-13
 
 HÜ: ein simples Projekt (console) mit EFCore und 2 Tabellen, Crud Operationen.
