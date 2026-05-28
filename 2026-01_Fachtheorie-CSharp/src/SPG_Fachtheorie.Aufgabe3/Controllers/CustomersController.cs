@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SPG_Fachtheorie.Aufgabe2.Infrastructure;
-using SPG_Fachtheorie.Aufgabe2.Model;
 using SPG_Fachtheorie.Aufgabe3.Cmds;
 using SPG_Fachtheorie.Aufgabe3.Dtos;
 
@@ -17,72 +16,49 @@ public class CustomersController : ControllerBase
         _db = db;
     }
 
+    /// <summary>
+    /// Diese REST API Route soll eine Liste von Kunden zurückliefern.
+    /// </summary>
+    /// <returns></returns>
     [HttpGet]
-    public async Task<ActionResult<List<CustomerDto>>> GetAllCustomers()
+    public ActionResult<List<CustomerDto>> GetAllCustomers()
     {
-        var customers = await _db.Customers
-            .Select(c => new CustomerDto(c.Id, c.FirstName, c.LastName, c.Email, c.Phone))
-            .ToListAsync();
-        return Ok(customers);
+        // TODO: Add your implementation
+        throw new NotImplementedException();
     }
 
+    /// <summary>
+    /// Gültige Preorders in der Datenbank (zum Testen) sind
+    /// 52189, 48813, 75195, 57911
+    /// </summary>
+    /// <param name="code"></param>
+    /// <returns></returns>
     [HttpGet("preorder/{code}")]
-    public async Task<ActionResult<PreorderDto>> GetPreorders(string code)
+    public ActionResult<PreorderDto> GetPreorders(string code)
     {
-        if (code.Length < 5)
-            return Problem("Code must be at least 5 characters long.", statusCode: 400);
-
-        var preorder = await _db.Preorders
-            .Include(p => p.PreorderItems)
-            .ThenInclude(pi => pi.Product)
-            .FirstOrDefaultAsync(p => p.Code == code);
-
-        if (preorder is null)
-            return Problem("Preorder not found.", statusCode: 404);
-
-        var dto = new PreorderDto(
-            preorder.PlacedAt,
-            preorder.TotalAmount,
-            preorder.PreorderItems
-                .Select(pi => new PreorderItemDto(pi.Product.Name, pi.Quantity, pi.UnitPrice))
-                .ToList());
-
-        return Ok(dto);
+        // TODO: Add your implementation
+        throw new NotImplementedException();
     }
 
+    /// <summary>
+    /// Diese REST API Route soll einen neuen Kunden erstellen.
+    /// </summary>
     [HttpPost]
-    public async Task<IActionResult> AddCustomer(NewCustomerCmd cmd)
+    public IActionResult AddCustomer(NewCustomerCmd cmd)
     {
-        if (string.IsNullOrEmpty(cmd.FirstName) || cmd.FirstName.Length > 255)
-            return Problem("FirstName must be between 1 and 255 characters.", statusCode: 400);
-
-        if (string.IsNullOrEmpty(cmd.LastName) || cmd.LastName.Length > 255)
-            return Problem("LastName must be between 1 and 255 characters.", statusCode: 400);
-
-        if (!cmd.Email.Contains('@'))
-            return Problem("Email must contain an @ sign.", statusCode: 400);
-
-        var customer = new Customer(cmd.FirstName, cmd.LastName, cmd.Email, cmd.Phone);
-        _db.Customers.Add(customer);
-        await _db.SaveChangesAsync();
-
-        return Created("", new { id = customer.Id });
+        // TODO: Add your implementation
+        throw new NotImplementedException();
     }
 
+    /// <summary>
+    /// Dieser Endpunkt soll Kunden aus der Datenbank löschen. Die übergebene ID als Routingpara­-
+    /// meter ist der Wert in Customer.Id. Sie dürfen den Kunden allerdings nur löschen, wenn keine
+    /// Preorders für diesen Kunden in der Datenbank vorhanden sind.
+    /// </summary>
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteCustomer(int id)
+    public IActionResult DeleteCustomer(int id)
     {
-        var customer = await _db.Customers.FirstOrDefaultAsync(c => c.Id == id);
-        if (customer is null)
-            return Problem("Customer not found.", statusCode: 404);
-
-        var hasPreorders = await _db.Preorders.AnyAsync(p => p.Customer.Id == id);
-        if (hasPreorders)
-            return Problem("Customer has preorders and cannot be deleted.", statusCode: 400);
-
-        _db.Customers.Remove(customer);
-        await _db.SaveChangesAsync();
-
-        return NoContent();
+        // TODO: Add your implementation
+        throw new NotImplementedException();
     }
 }

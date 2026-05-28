@@ -2,10 +2,5 @@
 
 public enum DeliveryStatus
 {
-    Created,
-    InTransit,
-    OutForDelivery,
-    Delivered,
-    Failed,
-    Returned
+    // TODO: Add your implementation
 }

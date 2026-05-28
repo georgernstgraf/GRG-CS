@@ -5,7 +5,7 @@
 		<ImplicitUsings>disable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>false</IsPackable>
-
+		<BaseOutputPath>C:\Scratch\Aufgabe1Test</BaseOutputPath>
 
 	</PropertyGroup>
 
