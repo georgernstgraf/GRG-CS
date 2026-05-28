@@ -5,7 +5,7 @@
 		<Nullable>enable</Nullable>
 		<IsPackable>false</IsPackable>
 		<IsTestProject>true</IsTestProject>
-		<BaseOutputPath>C:\Scratch\Aufgabe3Test</BaseOutputPath>
+
 	</PropertyGroup>
 
 	<ItemGroup>

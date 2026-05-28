@@ -44,5 +44,50 @@ public class CustomersControllerTests : IClassFixture<TestWebApplicationFactory>
         Assert.True(customers.Count == 2);
     }
 
-    // TODO: Add your integration tests for DELETE
+    [Fact]
+    public async Task DeleteCustomer_Returns204_WhenCustomerExistsAndHasNoPreorders()
+    {
+        _factory.InitializeDatabase(db =>
+        {
+            db.Customers.Add(new Customer("first", "last", "x@y.at", "+43123456"));
+            db.SaveChanges();
+        });
+
+        var statusCode = await _factory.DeleteHttpContent("/customers/1");
+        Assert.Equal(HttpStatusCode.NoContent, statusCode);
+
+        var deleted = _factory.QueryDatabase(db => db.Customers.Any(c => c.Id == 1));
+        Assert.False(deleted);
+    }
+
+    [Fact]
+    public async Task DeleteCustomer_Returns400_WhenCustomerHasPreorders()
+    {
+        _factory.InitializeDatabase(db =>
+        {
+            var category = new Category("TestCategory");
+            db.Categories.Add(category);
+            var product = new Product("TestProduct", "Desc", 10m, category);
+            db.Products.Add(product);
+            var customer = new Customer("first", "last", "x@y.at", "+43123456");
+            db.Customers.Add(customer);
+            var preorder = new Preorder(customer, "PRE01", DateTime.UtcNow, 10m);
+            db.Preorders.Add(preorder);
+            var item = new PreorderItem(preorder, product, 1, 10m);
+            db.PreorderItems.Add(item);
+            db.SaveChanges();
+        });
+
+        var statusCode = await _factory.DeleteHttpContent("/customers/1");
+        Assert.Equal(HttpStatusCode.BadRequest, statusCode);
+    }
+
+    [Fact]
+    public async Task DeleteCustomer_Returns404_WhenCustomerNotFound()
+    {
+        _factory.InitializeDatabase(db => { });
+
+        var statusCode = await _factory.DeleteHttpContent("/customers/999");
+        Assert.Equal(HttpStatusCode.NotFound, statusCode);
+    }
 }

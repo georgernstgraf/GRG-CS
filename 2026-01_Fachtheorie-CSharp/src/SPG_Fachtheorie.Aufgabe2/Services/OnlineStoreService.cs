@@ -1,4 +1,5 @@
-﻿using SPG_Fachtheorie.Aufgabe2.Infrastructure;
+﻿using Microsoft.EntityFrameworkCore;
+using SPG_Fachtheorie.Aufgabe2.Infrastructure;
 using SPG_Fachtheorie.Aufgabe2.Model;
 using System;
 using System.Collections.Generic;
@@ -21,53 +22,64 @@ public class OnlineStoreService
         _db = db;
     }
 
-    /// <summary>
-    /// Geben Sie alle Produktkategorien (Category) samt der Anzahl der darin
-    /// enthaltenen Produkte zurück.
-    /// </summary>
-    /// <returns></returns>
     public List<CategoryWithCountDto> GetCategoriesWithProductCounts()
     {
-        // TODO: Add your implementation
-        throw new NotImplementedException();
+        return _db.Categories
+            .Include(c => c.Products)
+            .Select(c => new CategoryWithCountDto(c.Name, c.Products.Count))
+            .ToList();
     }
 
-    /// <summary>
-    /// Geben Sie alle Vorbestellungen (Preorder) eines Kunden zurück. Als Rückgabetyp steht Ihnen
-    /// der folgende Record zur Verfügung. Das Property CustomerName soll als Stringverknüpfung mit
-    /// dem Muster {FirstName} {LastName} gebildet werden.
-    /// </summary>
     public List<PreorderDto> GetPreordersOfCustomer(int customerId)
     {
-        // TODO: Add your implementation
-        throw new NotImplementedException();
+        return _db.Preorders
+            .Where(p => p.Customer.Id == customerId)
+            .Select(p => new PreorderDto(
+                p.Customer.Id,
+                p.Customer.FirstName + " " + p.Customer.LastName,
+                p.Code,
+                p.PlacedAt,
+                p.TotalAmount))
+            .ToList();
     }
 
-    /// <summary>
-    /// Gibt den Umsatz eines Produktes zurück. Um den Umsatz zu berechnen, summieren Sie Preor­
-    /// der Item.Quantity * PreorderItem.UnitPrice aller Vorbestellungen (PreorderItem) des Produktes.
-    /// 
-    /// HINWEIS: Liefern Sie ein einzelnes Produkt zurück, keine Liste.
-    /// Verwenden Sie daher FirstOrDefault.
-    /// </summary>
     public ProductWithRevenueDto? GetRevenueOfProduct(int productId)
     {
-        // TODO: Add your implementation
-        throw new NotImplementedException();
+        return _db.Products
+            .Where(p => p.Id == productId)
+            .Select(p => new ProductWithRevenueDto(
+                p.Id,
+                p.Name,
+                p.PreorderItems.Sum(pi => pi.Quantity * pi.UnitPrice)))
+            .FirstOrDefault();
     }
 
-    /// <summary>
-    /// Legen Sie eine Vorbestellung (Preorder) samt der PreorderItems in der Datenbank an. 
-    /// HINWEIS: Legen Sie zuerst eine Preorder mit Code "00000", DateTime.UtcNow für placedAt
-    ///          und 0 für totalAmount an.
-    ///          Projizieren Sie danach productPreorders in eine temporäre Liste mit
-    ///          dem Produkt aus der DB und der Quantity.
-    ///          Projizieren Sie danach diese Liste in eine Liste von PreorderItems.
-    ///          Zum Schluss berechnen Sie TotalAmount und weisen es dem preorder Objekt zu.
-    /// </summary>
     public Preorder AddPreorder(int customerId, List<CustomerProductPreorder> productPreorders)
     {
-        // TODO: Add your implementation
-        throw new NotImplementedException();
+        var customer = _db.Customers.FirstOrDefault(c => c.Id == customerId);
+        if (customer is null)
+            throw new OnlineStoreException("Invalid CustomerId.");
+
+        if (productPreorders.Count == 0)
+            throw new OnlineStoreException("Empty preorders.");
+
+        var preorder = new Preorder(customer, "00000", DateTime.UtcNow, 0);
+        _db.Preorders.Add(preorder);
+
+        var preorderItems = productPreorders
+            .Select(pp => new
+            {
+                Product = _db.Products.FirstOrDefault(p => p.Id == pp.ProductId),
+                pp.Quantity
+            })
+            .Where(x => x.Product is not null)
+            .Select(x => new PreorderItem(preorder, x.Product!, x.Quantity, x.Product!.Price))
+            .ToList();
+
+        preorder.TotalAmount = preorderItems.Sum(pi => pi.Quantity * pi.UnitPrice);
+        preorder.PreorderItems.AddRange(preorderItems);
+        _db.SaveChanges();
+
+        return preorder;
     }
 }
