@@ -13,6 +13,34 @@ Schuljahren und Themen geordnet.
 
 ---
 
+## Beurteilung
+
+Die Note setzt sich aus drei gleich gewerteten Bereichen zusammen:
+
+| Bereich | Gewicht |
+|---|---|
+| PLF (Praxis-Leistungs-Feststellung) | 1/3 |
+| Hausübungen | 1/3 |
+| Mitarbeit | 1/3 |
+
+Mitarbeit umfasst auch Schulübungen und Stundenwiederholungen; deren Qualität und
+Intensität werden von der Lehrperson beurteilt.
+
+## Hausübungen
+
+- **Abgabe:** spätestens am nächsten Unterrichtstag **00:00 Uhr** (in der Regel eine Woche später).
+- **Nachreichung:** jederzeit möglich – die erreichte Punktezahl zählt **75 %**.
+- **Cutoff:** Genau **eine Woche vor dem Notenschluss, 00:00 Uhr**, ist Endtermin.
+  Danach werden die Repos automatisiert ausgewertet.
+
+## Organisatorisches
+
+- **Toilettengang:** wortlos aufstehen, Blickkontakt mit der Lehrperson.
+- **Rückmeldung** zu automatisierten E-Mails und nachgereichten Arbeiten bitte als
+  Antwort auf das Roboter-E-Mail.
+
+---
+
 ## Projekte
 
 | Ordner | Beschreibung |
@@ -72,22 +100,8 @@ GRG-CS/
 ├── docs/ai/                   # KI-Agenten-Konfiguration
 ├── grg-cs.sln                 # Visual Studio Solution
 ├── skriptum.pdf               # Skriptum (OOP C#)
-├── RULES.md                   # Allgemeine Kursregeln
 └── AGENTS.md                  # AI-Agenten-Anweisungen
 ```
-
----
-
-## Beurteilung
-
-Die Semesternote setzt sich zu gleichen Teilen (je 25 %) aus folgenden Bereichen zusammen:
-
-1. **Test** (1 pro Semester)
-2. **Hausübungen**
-3. **Schulübungen / Stundenwiederholung / Mitarbeit**
-4. **Projekt**
-
-Drei der vier Bereiche müssen positiv sein.
 
 ---
 
